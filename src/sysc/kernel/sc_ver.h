@@ -101,9 +101,8 @@ extern SC_API const std::string  sc_copyright_string;
       SC_CONCAT_UNDERSCORE_( sc_api_version, \
       SC_CONCAT_UNDERSCORE_( SC_VERSION_MAJOR, \
       SC_CONCAT_UNDERSCORE_( SC_VERSION_MINOR, \
-      SC_CONCAT_UNDERSCORE_( SC_VERSION_PATCH, \
-      SC_CONCAT_HELPER_( cxx, SC_CPLUSPLUS ) \
-  ) ) ) )
+                             SC_VERSION_PATCH \
+  ) ) )
 
 // explicitly avoid macro expansion
 #define SC_API_DEFINED_( Symbol ) \
