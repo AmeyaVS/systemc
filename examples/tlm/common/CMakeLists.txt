@@ -20,21 +20,16 @@
 ###############################################################################
 #
 # examples/tlm/common/CMakeLists.txt --
-# Build the shared TLM example helper sources ONCE into an OBJECT library so
-# that they are not recompiled by every example target.
+# Build the shared TLM example helper sources into an static library.
 #
-# NOTE: These sources are compiled WITHOUT USING_EXTENSION_OPTIONAL.  The
-# at_extension_optional example needs traffic_generator.cpp / at_target_*.cpp
+# NOTE: These sources are compiled without USING_EXTENSION_OPTIONAL defined. The
+# at_extension_optional example needs traffic_generator.cpp/at_target_*.cpp
 # compiled WITH that macro, so it keeps its own private copies and does not
 # link this library.
 #
-# Only the helper sources actually consumed by the example executables are
-# listed here (the header-only / template initiator variants such as
-# at_initiator_*.cpp are pulled in directly by the examples that need them).
-#
 ###############################################################################
 
-add_library (tlm_common OBJECT
+add_library (tlm_common STATIC
              include/at_target_1_phase.h
              src/at_target_1_phase.cpp
              include/at_target_2_phase.h
