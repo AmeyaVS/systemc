@@ -88,7 +88,7 @@ jobs:
         cmake --build BUILD/RELEASE/BUILD --config RELEASE --parallel
         cmake --install BUILD/RELEASE/BUILD --config RELEASE
         # Builds examples and regression but only executes examples registered tests
-        cmake --build BUILD/RELEASE/BUILD --config RELEASE examples\check
+        cmake --build BUILD/RELEASE/BUILD --config RELEASE --target examples\check
   msys2-ucrt64:
     runs-on: windows-latest
     strategy:
